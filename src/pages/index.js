@@ -1,3 +1,4 @@
+import MainLayout from "@/components/Layout/MainLayout";
 import Head from "next/head";
 
 export default function Home() {
@@ -13,8 +14,11 @@ export default function Home() {
         <link rel="icon" href="/pc.png" sizes="any" />
       </Head>
 
-      
       <p>Hello world!</p>
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
