@@ -28,7 +28,7 @@ const Header = () => {
                     <Link href="/categories/Motherboard">Motherboard</Link>
                   </li>
                   <li>
-                    <Link href="/categories/RAM">RAM</Link>
+                    <Link href="/categories/Ram">RAM</Link>
                   </li>
                   <li>
                     <Link href="/categories/Power Supply Unit">
@@ -41,13 +41,10 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/categories/Monitor">Monitor</Link>
+                    <Link href="/categories/Monitors">Monitor</Link>
                   </li>
                   <li>
                     <Link href="/categories/Mouse">Mouse</Link>
-                  </li>
-                  <li>
-                    <Link href="/categories/Others">Others</Link>
                   </li>
                 </ul>
               </details>
@@ -87,7 +84,7 @@ const Header = () => {
                   <Link href="/categories/Motherboard">Motherboard</Link>
                 </li>
                 <li>
-                  <Link href="/categories/RAM">RAM</Link>
+                  <Link href="/categories/Ram">RAM</Link>
                 </li>
                 <li>
                   <Link href="/categories/Power Supply Unit">
@@ -98,13 +95,10 @@ const Header = () => {
                   <Link href="/categories/Storage Device">Storage Device</Link>
                 </li>
                 <li>
-                  <Link href="/categories/Monitor">Monitor</Link>
+                  <Link href="/categories/Monitors">Monitor</Link>
                 </li>
                 <li>
                   <Link href="/categories/Mouse">Mouse</Link>
-                </li>
-                <li>
-                  <Link href="/categories/Others">Others</Link>
                 </li>
               </ul>
             </details>
