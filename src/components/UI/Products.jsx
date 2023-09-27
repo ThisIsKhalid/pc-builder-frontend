@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProductCard from "./ProductCard";
 import { useRouter } from "next/router";
 
@@ -20,6 +21,11 @@ const Products = ({ products }) => {
           {products?.slice(0, 6).map((product) => (
             <ProductCard key={product?._id} product={product} />
           ))}
+        </div>
+        <div className="flex items-center justify-center my-5">
+          <Link href='/products'>
+            <button className="btn btn-primary px-10 ">See All</button>
+          </Link>
         </div>
       </div>
     );

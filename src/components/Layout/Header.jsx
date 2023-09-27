@@ -46,6 +46,9 @@ const Header = () => {
                   <li>
                     <Link href="/categories/Mouse">Mouse</Link>
                   </li>
+                  <li>
+                    <Link href="/categories/Others">Others</Link>
+                  </li>
                 </ul>
               </details>
             </li>
@@ -73,10 +76,15 @@ const Header = () => {
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li tabIndex={0}>
-            <details>
-              <summary>Categories</summary>
-              <ul className="p-2 w-60">
+          <li>
+            <div className="dropdown dropdown-hover dropdown-bottom menu-dropdown-toggle">
+              <label tabIndex={0} className="">
+                Categories
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
                 <li>
                   <Link href="/categories/Processor">CPU/Processor</Link>
                 </li>
@@ -100,8 +108,11 @@ const Header = () => {
                 <li>
                   <Link href="/categories/Mouse">Mouse</Link>
                 </li>
+                <li>
+                  <Link href="/categories/Others">Others</Link>
+                </li>
               </ul>
-            </details>
+            </div>
           </li>
           <li>
             <Link href="/products">Products</Link>

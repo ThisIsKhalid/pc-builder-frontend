@@ -1,7 +1,10 @@
 import MainLayout from "@/components/Layout/MainLayout";
+import FeaturedCategories from "@/components/UI/FeaturedCategories";
+import Products from "@/components/UI/Products";
+import axios from "axios";
 import Head from "next/head";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div>
       <Head>
@@ -13,8 +16,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/pc.png" sizes="any" />
       </Head>
-
-      <p>Hello world!</p>
+      <FeaturedCategories />
+      <Products products={products} />
     </div>
   );
 }
@@ -22,3 +25,24 @@ export default function Home() {
 Home.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
+
+export async function getStaticProps() {
+  const apiUrl = `http://localhost:5000/api/v1/products`;
+  try {
+    const response = await axios.get(apiUrl);
+    const products = response.data;
+    return {
+      props: {
+        products: products?.data?.data,
+      },
+      revalidate: 3600, // 1 hour (3600 seconds)
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: {
+        products: [],
+      },
+    };
+  }
+}
