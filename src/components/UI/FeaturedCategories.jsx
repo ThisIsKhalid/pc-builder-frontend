@@ -18,7 +18,7 @@ const FeaturedCategories = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-14">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
           {featuredCategories?.slice(0, 6).map((category) => (
             <>
               <Link href={`categories/${category.key}`}>

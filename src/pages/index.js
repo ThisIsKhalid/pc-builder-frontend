@@ -1,4 +1,5 @@
 import MainLayout from "@/components/Layout/MainLayout";
+import Banner from "@/components/UI/Banner";
 import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import Products from "@/components/UI/Products";
 import axios from "axios";
@@ -16,6 +17,7 @@ export default function Home({ products }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/pc.png" sizes="any" />
       </Head>
+      <Banner />
       <FeaturedCategories />
       <Products products={products} />
     </div>

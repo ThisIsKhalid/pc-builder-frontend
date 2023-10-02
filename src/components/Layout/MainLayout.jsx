@@ -8,7 +8,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className={firaCode.className}>
       <Header />
-      <main className="min-h-screen px-5">{children}</main>
+      <main className="min-h-screen px-5 md:px-0">{children}</main>
       <Footer />
     </div>
   );
