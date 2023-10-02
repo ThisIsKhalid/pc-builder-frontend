@@ -1,8 +1,10 @@
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = () => {
+  const { data: session } = useSession();
   return (
     <div className="navbar bg-primary px-5">
       <div className="navbar-start">
@@ -55,15 +57,19 @@ const Header = () => {
             <li>
               <Link href="/products">Products</Link>
             </li>
-            <li>
-              <Link href="/">Sign-Out</Link>
-            </li>
-            <li>
-              <Link href="/">Sign-In</Link>
-            </li>
-            <li>
-              <Link href="/">Sign-Up</Link>
-            </li>
+            {session?.user?.email ? (
+              <>
+                <li>
+                  <button onClick={() => signOut()}>Sign out</button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link href="/signin">Sign-In</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <Link href="/" className=" text-sm font-medium text-error pl-5 lg:pl-0">
@@ -117,21 +123,27 @@ const Header = () => {
           <li>
             <Link href="/products">Products</Link>
           </li>
-          <li>
-            <Link href="/">Sign-Out</Link>
-          </li>
-          <li>
-            <Link href="/">Sign-In</Link>
-          </li>
-          <li>
-            <Link href="/">Sign-Up</Link>
-          </li>
+          {session?.user?.email ? (
+            <>
+              <li>
+                <button onClick={() => signOut()}>Sign out</button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link href="/signin">Sign-In</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-sm bg-error text-gray-700 hover:text-gray-900 border-none hover:bg-success">
-          PC Builder
-        </button>
+        <Link href="/pc_builder">
+          <button className="btn btn-sm bg-error text-gray-700 hover:text-gray-900 border-none hover:bg-success">
+            PC Builder
+          </button>
+        </Link>
       </div>
     </div>
   );

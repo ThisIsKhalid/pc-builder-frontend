@@ -19,7 +19,7 @@ const FeaturedCategories = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-14">
-          {featuredCategories?.slice(0, 3).map((category) => (
+          {featuredCategories?.slice(0, 6).map((category) => (
             <>
               <Link href={`categories/${category.key}`}>
                 <div className="flex flex-col justify-center items-center  transform duration-500 shadow hover:shadow-2xl hover:scale-100 border-none bg-gray-100 py-5">
