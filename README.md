@@ -1,5 +1,8 @@
 # PC Builder
 * Live Link: https://pc-builder-frontend-seven.vercel.app/
+* Server Link: https://pc-builder-server-smoky-six.vercel.app/
+
+Server Repo: https://github.com/ThisIsKhalid/pc-builder-backend
 
 ## Introduction
 
