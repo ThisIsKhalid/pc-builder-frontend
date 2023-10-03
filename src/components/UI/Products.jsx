@@ -1,10 +1,10 @@
 import Link from "next/link";
-import ProductCard from "./ProductCard";
 import { useRouter } from "next/router";
+import ProductCard from "./ProductCard";
 
 const Products = ({ products }) => {
   const router = useRouter();
-//   console.log(router.asPath);
+  //   console.log(router.asPath);
   let content = null;
   if (router.asPath === "/") {
     content = (
@@ -23,7 +23,7 @@ const Products = ({ products }) => {
           ))}
         </div>
         <div className="flex items-center justify-center my-5">
-          <Link href='/products'>
+          <Link href="/products">
             <button className="btn btn-primary px-10 ">See All</button>
           </Link>
         </div>
@@ -39,9 +39,15 @@ const Products = ({ products }) => {
           </p>
         </div>
         <div className=" mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products?.map((product) => (
-            <ProductCard key={product?._id} product={product} />
-          ))}
+          {products?.length > 0 ? (
+            products?.map((product) => (
+              <ProductCard key={product?._id} product={product} />
+            ))
+          ) : (
+            <>
+              <p className="text-xl text-red-500 font-medium">Products not found!!</p>
+            </>
+          )}
         </div>
       </div>
     );

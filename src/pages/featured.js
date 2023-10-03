@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 
-import Head from "next/head";
-import Link from "next/link";
-import axios from "axios";
 import MainLayout from "@/components/Layout/MainLayout";
 import { featuredCategories } from "@/utils";
+import axios from "axios";
+import Head from "next/head";
+import Link from "next/link";
 
 const Featured = ({ categories }) => {
   return (
@@ -53,7 +53,7 @@ Featured.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const apiUrl = `http://localhost:5000/api/v1/categories`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/categories`;
   try {
     const response = await axios.get(apiUrl);
     const categories = response.data;

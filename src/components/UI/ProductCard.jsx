@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { BsFillStarFill, BsStar } from "react-icons/bs";
 
 const ProductCard = ({ product }) => {
   const { data: session } = useSession();
@@ -37,7 +38,11 @@ const ProductCard = ({ product }) => {
             {product?.status === true ? "In Stock" : "Out of Stock"}
           </div>
           <div className="badge badge-outline">{category}</div>
-          <div className="badge badge-outline">Rating: {individualRating}</div>
+          <div className="badge badge-outline">
+            {Array.from({ length: product?.averageRating }).map((_, index) => (
+              <BsFillStarFill key={index} className="text-red-500" />
+            ))}
+          </div>
         </div>
         <h2 className="text-lg font-medium">{name}</h2>
         <p className="card-title font-bold">$ {price}</p>

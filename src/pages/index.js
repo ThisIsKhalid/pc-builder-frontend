@@ -29,7 +29,7 @@ Home.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
-  const apiUrl = `http://localhost:5000/api/v1/products`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/products`;
   try {
     const response = await axios.get(apiUrl);
     const products = response.data;

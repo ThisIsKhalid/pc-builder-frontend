@@ -18,7 +18,7 @@ export const authOptions = {
         };
         try {
           await axios.post(
-            "http://localhost:5000/api/v1/users/create-user",
+            "${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/users/create-user",
             userData,
             {
               headers: {
@@ -34,7 +34,7 @@ export const authOptions = {
     },
   },
   pages: {
-    signIn: "http://localhost:3000/signin",
+    signIn: "/signin",
   },
 };
 export default NextAuth(authOptions);

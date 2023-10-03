@@ -1,8 +1,26 @@
+import { addComponent } from "@/redux/pcSlice/pcSlice";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { BsFillStarFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 
 const ProductCardDetails = ({ product }) => {
   const [activeTab, setActiveTab] = useState("features");
+
+  const { data: session } = useSession();
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handelAddComponent = (category) => {
+    if (session?.user) {
+      dispatch(addComponent({ category, product }));
+      router.push("/pc_builder");
+    } else {
+      toast.error("Please login");
+    }
+  };
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -81,19 +99,18 @@ const ProductCardDetails = ({ product }) => {
             {product?.status ? "In Stock" : "Out of Stock"}
           </p>
           <p className="text-2xl font-bold mb-2">${product?.price}</p>
-          <span className="flex text-2xl text-orange-400 items-center mt1">
-            {product.averageRating}
+          <span className="flex text-xl text-orange-400 items-center my-1">
+            {Array.from({ length: product?.averageRating }).map((_, index) => (
+              <BsFillStarFill key={index} className="text-red-500" />
+            ))}
           </span>
           <h3 className="text-lg font-bold mb-2">Description</h3>
           <p>{product?.description}</p>
           <button
-            disabled={product?.status === false}
+            className="btn btn-primary w-1/2 my-2"
             onClick={() => handelAddComponent(product?.category)}
-            type="primary"
-            block
-            size="large"
           >
-            Add To Build
+            Add to Build
           </button>
         </div>
       </div>

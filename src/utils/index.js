@@ -46,4 +46,10 @@ export const featuredCategories = [
     image:
       "https://www.pcstudio.in/wp-content/uploads/2021/04/gaminglaptop-caticon.svg",
   },
+  {
+    key: "Others",
+    label: "Others",
+    image:
+      "https://www.pcstudio.in/wp-content/uploads/2021/04/gaminglaptop-caticon.svg",
+  },
 ];

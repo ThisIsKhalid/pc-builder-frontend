@@ -32,7 +32,7 @@ CategoryPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const apiUrl = `http://localhost:5000/api/v1/categories`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/categories`;
   try {
     const response = await axios.get(apiUrl);
     const categories = response.data;
@@ -51,7 +51,7 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps({ params }) {
-  const apiUrl = `http://localhost:5000/api/v1/products`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/products`;
   try {
     const response = await axios.get(apiUrl);
     const categoryData = response.data;

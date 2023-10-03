@@ -7,26 +7,26 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const PcBuilderPage = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const checkSession = async () => {
-      const session = await getSession();
-      if (!session) {
-        toast.error('Please Login');
-        router.push("/signin");
-      }
-      setLoading(false);
-    };
+  // useEffect(() => {
+  //   const checkSession = async () => {
+  //     const session = await getSession();
+  //     if (!session) {
+  //       toast.error('Please Login');
+  //       router.push("/signin");
+  //     }
+  //     setLoading(false);
+  //   };
 
-    checkSession();
-  }, [router]);
+  //   checkSession();
+  // }, [router]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div>
