@@ -1,4 +1,5 @@
 # PC Builder
+* Live Link: https://pc-builder-frontend-seven.vercel.app/
 
 ## Introduction
 
@@ -56,4 +57,4 @@ To run the project locally, follow these steps:
 
 ## Deployed Website
 
-The website is deployed on [Vercel](https://vercel.com/) and can be accessed using the following link: [PC Builder Website](https://your-deployed-link.com).
+The website is deployed on [Vercel](https://vercel.com/) and can be accessed using the following link: [PC Builder Website](https://pc-builder-frontend-seven.vercel.app).

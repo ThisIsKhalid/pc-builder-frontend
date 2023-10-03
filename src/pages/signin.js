@@ -19,7 +19,7 @@ const SignUp = () => {
               className="btn btn-info w-full h-14"
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000",
+                  callbackUrl: "https://pc-builder-frontend-seven.vercel.app",
                 })
               }
             >
